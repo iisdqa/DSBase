@@ -14,6 +14,7 @@ public abstract class BaseTest
 	protected WebDriver driver;
 	protected Connection sqlConnection;
 	protected String browser;
+	protected String base_dir = System.getProperties().get("basedir").toString();
 	
 	@BeforeMethod(alwaysRun = true)
 	@Parameters({"browser", "environment"})

@@ -219,7 +219,7 @@ private static final String PAGE_URL = BASE_URL + "/Instructions/List/";
 	
 	public void fileUnload_Check()
 	{
-		new CustomMethods().fileDownload_Check(new Docs_Block().getFileDownloadButton(), "ForDocAdd.txt");
+		new CustomMethods().new WorkWith_TextFiles().fileDownload_Check(new Docs_Block().getFileDownloadButton(), "ForDocAdd.txt");
 	}
 	
 	public void doc_Edit()

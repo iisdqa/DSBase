@@ -11,6 +11,8 @@ import org.testng.Assert;
 
 public class DbQueries 
 {	
+	private static String queriesPath = "C:\\Selenium_TestData\\SQL\\SQL_Queries\\";
+	
 	public static class DrugRegistryTests
 	{
 		public static class DrugQueries
@@ -23,7 +25,7 @@ public class DbQueries
 				    public static final String ErrorMessage = "\r\n\r\nПроизошла ошибка при попытке удаления препарата.\r\nТекст ошибки:\r\n";
 	 
 				    // Определение текста запроса
-				    public static String DrugDeletionStatement = readFile("C:\\Selenium_TestData\\SQL_Queries\\drug_deletion.sql");
+				    public static String DrugDeletionStatement = readFile(queriesPath + "drug_deletion.sql");
 				}
 				
 				public static class InstructionDeletion
@@ -32,7 +34,7 @@ public class DbQueries
 				    public static final String ErrorMessage = "\r\n\r\nПроизошла ошибка при попытке удаления инструкции препарата.\r\nТекст ошибки:\r\n";
 	 
 				    // Определение текста запроса
-				    public static String InstructionDeletionStatement = readFile("C:\\Selenium_TestData\\SQL_Queries\\instruction_deletion.sql");
+				    public static String InstructionDeletionStatement = readFile(queriesPath + "instruction_deletion.sql");
 				}
 				
 				public static class ChangeDeletion
@@ -41,7 +43,7 @@ public class DbQueries
 				    public static final String ErrorMessage = "\r\n\r\nПроизошла ошибка при попытке удаления изменения препарата.\r\nТекст ошибки:\r\n";
 	 
 				    // Определение текста запроса
-				    public static String ChangeDeletionStatement = readFile("C:\\Selenium_TestData\\SQL_Queries\\drug_change_deletion.sql");
+				    public static String ChangeDeletionStatement = readFile(queriesPath + "drug_change_deletion.sql");
 				}
 				
 				public static class ReferentDrugsDeletion
@@ -50,7 +52,7 @@ public class DbQueries
 				    public static final String ErrorMessage = "\r\n\r\nПроизошла ошибка при попытке удаления референтных ЛС.\r\nТекст ошибки:\r\n";
 	 
 				    // Определение текста запроса
-				    public static String RefDrugsDeletionStatement = readFile("C:\\Selenium_TestData\\SQL_Queries\\reference_drugs_deletion.sql");
+				    public static String RefDrugsDeletionStatement = readFile(queriesPath + "reference_drugs_deletion.sql");
 				}
 			}
 		}
@@ -108,25 +110,10 @@ public class DbQueries
 			    public static final String ErrorMessage = "\r\n\r\nПроизошла ошибка при попытке удаления пользователя.\r\nТекст ошибки:\r\n";
  			 			    
 			    // Определение текста запроса
-			    public static String UserDeletionStatement = readFile("C:\\Selenium_TestData\\SQL_Queries\\user_deletion.sql");
+			    public static String UserDeletionStatement = readFile(queriesPath+ "user_deletion.sql");
 			}
 		}
 	}
-	
-/*	// Прочитать файл из файла
-	private static String readFile(String path, Charset encoding)
-	{
-		  byte[] encoded = null;
-		  try 
-		  {
-			  encoded = Files.readAllBytes(Paths.get(path));
-		  } 
-		  catch (IOException e) 
-		  {
-			  e.printStackTrace();
-		  }
-		  return new String(encoded, encoding);
-	}*/
 	
 	// Прочитать текст из файла
 	private static String readFile(String path)

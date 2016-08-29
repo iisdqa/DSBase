@@ -7,82 +7,29 @@ import java.sql.Statement;
 
 import org.testng.annotations.Parameters;
 
+import com.dsbase.core.web.CustomMethods;
+
 public class DbConnection 
 {	
-/*	private String environment;
-	
-	protected Connection connection;
-	protected static Statement st;
-	protected ResultSet rs;
-	
-	@Parameters({"environment"})
-	private DbConnection(String environment)
-	{
-		this.environment = environment;
-	}
-	
-	public DbConnection()
-	{
-		// Определение URL, логина и пароля для подключения
-		String conUrl = defineConnection(environment);
-		String Login = "dsbase_web_user";
-		String Password = "dsbase_web_user";
-		
-		try 
-		{
-			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			connection = DriverManager.getConnection(conUrl, Login, Password);
-			st = connection.createStatement();
-		} 
-		
-		catch (Exception e) 
-		{
-			System.out.println("Ошибка при подключении к БД: " + e);
-		}
-	}
-	
-	private String defineConnection(String environment)
-	{
-		// Объявление переменной
-		String conUrl = null;
-		
-		// Если 'dev' площадка
-		if(environment.equals("dev"))
-		{
-			conUrl = "jdbc:sqlserver://PAIS\\SQLEXPRESS;databaseName=DSBase";
-		}
-		
-		// Если 'release' площадка
-		else if(environment.equals("release"))
-		{
-			conUrl = "jdbc:sqlserver://DSBASE\\SQLEXPRESS;databaseName=DSBase";
-		}
-		
-		// Если другое, то ошибка
-		else
-		{
-			System.out.println("Ошибка при попытке определения URL для подключения к БД. Переменная 'environment' = " + environment);
-		}
-		
-		// Вернуть URL подключения
-		return conUrl;
-	}*/
-	
 	protected static Connection connection;
 	protected static Statement st;
+	protected static String sqlPath = "D:\\Selenium_TestData\\SQL\\";
 	
 	@Parameters({"environment"})
 	public static Connection setDbConnection(String environment)
 	{
 		// Определение URL, логина и пароля для подключения
 		String conUrl = defineConnection(environment);
-		String Login = "dsbase_web_user";
-		String Password = "dsbase_web_user";
+		
+		// Вытяжка юзера из файла
+		String[] user = new CustomMethods().new WorkWith_TextFiles().file_Read(sqlPath + "db_user.txt").split("#");
+		String login = user[1].trim();
+		String password = user[2].trim();
 		
 		try 
 		{
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			connection = DriverManager.getConnection(conUrl, Login, Password);
+			connection = DriverManager.getConnection(conUrl, login, password);
 			st = connection.createStatement();
 			st.close();
 		} 
@@ -109,20 +56,25 @@ public class DbConnection
 	
 	private static String defineConnection(String environment)
 	{
+		// Вытяжка серверов из файла
+		String[] servers = new CustomMethods().new WorkWith_TextFiles().file_Read(sqlPath + "db_servers.txt").split("#");
+		String dev = servers[1].trim();
+		String release = servers[2].trim();
+		
 		// Объявление переменной
 		String conUrl = null;
 		
 		// Если 'dev' площадка
 		if(environment.equals("dev"))
 		{
-			conUrl = "jdbc:sqlserver://PAIS\\SQLEXPRESS;databaseName=DSBase";
+			conUrl = dev;
 			////conUrl = "jdbc:sqlserver://PAIS\\SQLEXPRESS;databaseName=DSBase?useUnicode=true&characterEncoding=utf8";
 		}
 		
 		// Если 'release' площадка
 		else if(environment.equals("release"))
 		{
-			conUrl = "jdbc:sqlserver://DSBASE\\SQLEXPRESS;databaseName=DSBase";
+			conUrl = release;
 		}
 		
 		// Если другое, то ошибка

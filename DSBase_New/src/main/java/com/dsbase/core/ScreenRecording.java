@@ -26,7 +26,9 @@ import org.openqa.selenium.remote.Augmenter;
 public class ScreenRecording 
 {
 	private static ScreenRecorder screenRecorder;
-	private String tempFilesFolder_Path = "C:\\Selenium_TestData\\Other\\TempFiles\\VideoRecording";
+	
+	// Define file download path
+	private String tempFilesFolder_Path = System.getProperties().get("basedir").toString() + "\\storage\\files\\temp_files\\video_recording";
 	
     public void startRecording(String TestName)
     {   

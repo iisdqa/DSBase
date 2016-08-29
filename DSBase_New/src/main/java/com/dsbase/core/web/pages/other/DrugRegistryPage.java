@@ -112,7 +112,7 @@ public class DrugRegistryPage extends WebPage<DrugRegistryPage>
 	public void excelUnload_Check()
 	{
 		String expectedFileName = "RegisterDrugs_" + new CustomMethods().getCurrentDate() + ".xls";
-		new CustomMethods().fileDownload_Check(getExcelButton(), expectedFileName);
+		new CustomMethods().new WorkWith_TextFiles().fileDownload_Check(getExcelButton(), expectedFileName);
 	}
 	
 	public void wholeFiltration_Check()

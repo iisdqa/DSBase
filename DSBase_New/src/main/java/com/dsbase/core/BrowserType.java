@@ -5,10 +5,11 @@ import java.util.Map;
 
 public enum BrowserType 
 {
-	FIREFOX("firefox"),
+	FIREFOX_OLD("firefox_old"),
+	FIREFOX_M("firefox_m"),
 	CHROME("chrome"),
-	OPERA("opera"),
-	IE("ie"),
+	IE_9("ie_9"),
+	IE_11("ie_11"),
 	REMOTE_IE("remote_ie");
 	
 	private String browserKey;

@@ -327,7 +327,7 @@ private static final String PAGE_URL = BASE_URL + "/Drugs/Registration";
 	
 	public void fileUnload_check()
 	{
-		new CustomMethods().fileDownload_Check(new Docs_Elements().getFileDownloadButton(), "ForDocAdd.txt");
+		new CustomMethods().new WorkWith_TextFiles().fileDownload_Check(new Docs_Elements().getFileDownloadButton(), "ForDocAdd.txt");
 	}
 	//________________________________________________________________________________________________________________________________//
 	
