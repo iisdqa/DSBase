@@ -1,0 +1,58 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!--
+<suite name="All tests">
+	<test name="preserve-order All tests" preserve-order="true">
+	    <groups>
+	        <define name="other_tests">
+      			<include name="UsersAndAudit_Test"/>
+      			<include name="Declarers_Test"/>
+      			<include name="Manufacturers_Test"/>
+    		</define>
+			
+			<define name="drug_tests">
+      			<include name="DrugRegistration_Test"/>
+      			<include name="DrugInstructions_Test"/>
+      			<include name="DrugChanges_Test"/>
+      			<include name="DrugReferents_Test"/>
+      			<include name="DrugDeletion_Test"/>
+    		</define>
+			
+			<define name="all_tests">
+      			<include name="other_tests"/>
+      			<include name="drug_tests"/>
+    		</define>
+    			    
+        	<run>
+            	<include name="all_tests" />
+        	</run>
+    	</groups>
+    	<classes>
+       		<class name="com.dsbase.administration.tests.UsersAndAudit_Test" />
+    		<class name="com.dsbase.dictionary.tests.Manufacturers_Test" />
+    		<class name="com.dsbase.dictionary.tests.Declarers_Test" />
+    		<class name="com.dsbase.drug_registry.tests.DrugRegistration_Test" />
+    		<class name="com.dsbase.drug_registry.tests.DrugInstructions_Test" />
+    		<class name="com.dsbase.drug_registry.tests.DrugChanges_Test" />
+    		<class name="com.dsbase.drug_registry.tests.DrugReferents_Test" />
+    		<class name="com.dsbase.drug_registry.tests.DrugDeletion_Test" />
+    	</classes>
+	</test>
+</suite>
+-->
+
+<suite name="For testing">
+	<listeners>
+		<listener class-name="com.dsbase.core.Listeners" />
+	</listeners>
+	
+	<test name="preserve-order Other tests" preserve-order="true">
+	    <groups>
+        	<run>
+      			<include name="DrugRegistration_Test"/>
+        	</run>
+    	</groups>
+    	<classes>
+    		<class name="com.dsbase.drug_registry.tests.DrugRegistration_Test" />
+    	</classes>
+	</test>
+</suite>

@@ -1,0 +1,16 @@
+environments:
+ 
+  dev:
+   scheme: http
+   host: pais
+   port: 8500
+ 
+  release:
+   scheme: http
+   host: dsbase
+   port: 8500
+ 
+  demo:
+   scheme: http
+   host: dsbase_demo
+   port: 9000
