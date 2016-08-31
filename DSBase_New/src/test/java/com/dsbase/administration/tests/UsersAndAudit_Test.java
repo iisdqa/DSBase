@@ -19,7 +19,7 @@ import com.dsbase.core.web.pages.other.MainPage;
 public class UsersAndAudit_Test extends BaseTest 
 {
 	@BeforeMethod(alwaysRun = true, dependsOnMethods = {"setUp"})
-	public void DeletionViaDatabase() throws Exception
+/*	public void DeletionViaDatabase() throws Exception
 	{
 	    // Определение ошибки, которая будет появляться в случае падения запроса
 	    String ErrorMessage = DbQueries.AdministrationTests.UsersAndAuditQueries.DeletionQueries.ErrorMessage;
@@ -29,7 +29,7 @@ public class UsersAndAudit_Test extends BaseTest
 	    
 	    // Выполнение запроса
 	    new DbStatements().SimpleStatement(sqlConnection, DeletionStatement, ErrorMessage);
-	}
+	}*/
 	
 	@Test(groups = { "UsersAndAudit_Test" })
 	public void UsersAndAudit_TestMethod()

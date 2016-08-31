@@ -31,6 +31,9 @@ public class LogInPage extends WebPage<LogInPage>
 			   getSubmitButton().isAvailable();
 	}
 
+	
+	
+	
 	public MainPage logInAs(String UserName, String Password)
 	{
 		getUserNameInput().inputText(UserName);
@@ -46,6 +49,9 @@ public class LogInPage extends WebPage<LogInPage>
 		getSubmitButton().click();
 		return new DrugRegistryPage(driver).waitUntilAvailable();
 	}
+	
+	
+	
 	
 	private TextInput getUserNameInput()
 	{

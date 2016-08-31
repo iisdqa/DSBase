@@ -22,14 +22,14 @@ public abstract class BaseTest
 	{
 		driver = DriverMaster.getDriver(browser);
 		EnvironmentConfiguration.setGlobalEnvironment(environment);
-		sqlConnection = DbConnection.setDbConnection(environment);
+		//sqlConnection = DbConnection.setDbConnection(environment);
 		this.browser = browser;
 	}
 	
 	@AfterMethod(alwaysRun = true)
 	public void tearDown()
 	{
-		DbConnection.closeConnection(sqlConnection);
+		//DbConnection.closeConnection(sqlConnection);
 		driver.close();
 		driver.quit();
 	}

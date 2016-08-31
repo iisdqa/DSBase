@@ -13,7 +13,7 @@ public class DbConnection
 {	
 	protected static Connection connection;
 	protected static Statement st;
-	protected static String sqlPath = "D:\\Selenium_TestData\\SQL\\";
+	protected static String sqlPath = "C:\\Selenium_TestData\\SQL\\";
 	
 	@Parameters({"environment"})
 	public static Connection setDbConnection(String environment)
@@ -23,7 +23,7 @@ public class DbConnection
 		
 		// Вытяжка юзера из файла
 		String[] user = new CustomMethods().new WorkWith_TextFiles().file_Read(sqlPath + "db_user.txt").split("#");
-		String login = user[1].trim();
+		String login = user[1].trim().replace("\r\n", "");
 		String password = user[2].trim();
 		
 		try 
@@ -58,7 +58,7 @@ public class DbConnection
 	{
 		// Вытяжка серверов из файла
 		String[] servers = new CustomMethods().new WorkWith_TextFiles().file_Read(sqlPath + "db_servers.txt").split("#");
-		String dev = servers[1].trim();
+		String dev = servers[1].trim().replace("\r\n", "");
 		String release = servers[2].trim();
 		
 		// Объявление переменной

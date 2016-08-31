@@ -13,7 +13,7 @@ import com.dsbase.core.web.pages.other.MainPage;
 public class Declarers_Test extends BaseTest 
 {
 	@BeforeMethod(alwaysRun = true, dependsOnMethods = {"setUp"})
-	public void DeletionViaDatabase() throws Exception
+/*	public void DeletionViaDatabase() throws Exception
 	{
 	    // ”даление препарата(т.к. он ссылаетс€ на за€вител€)
 	    String DrugErrorMessage = DbQueries.DrugRegistryTests.DrugQueries.DeletionQueries.DrugDeletion.ErrorMessage;	  
@@ -24,7 +24,7 @@ public class Declarers_Test extends BaseTest
 	    String ErrorMessage = DbQueries.DictionaryTests.DeclarersQueries.DeletionQueries.DeclarerDeletion.ErrorMessage;
 	    String DeletionStatement = DbQueries.DictionaryTests.DeclarersQueries.DeletionQueries.DeclarerDeletion.DeclarerDeletionStatement;
 	    new DbStatements().SimpleStatement(sqlConnection, DeletionStatement, ErrorMessage);
-	}
+	}*/
 	
 	@Test(groups = { "Declarers_Test" })
 	public void Declarers_TestMethod()
