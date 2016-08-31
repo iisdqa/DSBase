@@ -12,7 +12,7 @@ public class GridsFiltrationCheck_Test extends BaseTest
 	@Test(groups = { "GridsFiltrationCheck_Test" })
 	public void GridsFiltrationCheck_TestMethod()
 	{	
-		// Переход на главную	
+		// Переход на главную.	
 		LogInPage authorizationPage = new MainPage(driver).redirectToLogInPage();
 		MainPage mainPage = authorizationPage.logInAs("admin_auto", "123456");
 		mainPage.waitForPageReady();
