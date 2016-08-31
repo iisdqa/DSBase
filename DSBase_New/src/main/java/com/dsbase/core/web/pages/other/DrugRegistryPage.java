@@ -45,7 +45,7 @@ public class DrugRegistryPage extends WebPage<DrugRegistryPage>
 	
 	public void userNameCheck(String expectedUserName)
 	{
-		// Найти текущее имя пользователя.
+		// Найти текущее имя пользователя..
 		String actualUserName = getUserName().getText();
 		
 		// Проверка равенства ожидаемого значения и реального значения
